@@ -10,5 +10,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser(COOKIE_SECRET))
 // app.use((req, res, next) => { console.log(`${req.method} ${req.url} (pid: ${process.pid})`); next() })
+
+app.get('/nuevo', (req, res) => {
+  res.send('hola mundo!')
+})
+
 app.use('/api', apiRouter)
 app.use('/', webRouter)
